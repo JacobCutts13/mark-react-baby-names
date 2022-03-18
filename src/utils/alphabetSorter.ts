@@ -1,1 +1,3 @@
-import { BabyNameProps } from "../components/name";
+export default function alphabetSorter(nameA: string, nameB: string) :number{
+    return nameA.localeCompare(nameB)
+}
