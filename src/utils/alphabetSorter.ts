@@ -1,0 +1,1 @@
+import { BabyNameProps } from "../components/name";
