@@ -8,6 +8,13 @@
   width: 1200px;
   margin: 0px auto;
 }
+.favourites {
+  text-align: center;
+  width: 1200px;
+  margin: 0px auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
 .namem {
   text-align: center;
@@ -26,6 +33,26 @@
   height: 30px;
   margin: 5px;
   border-radius: 10%;
+}
+.fav-namem {
+  text-align: center;
+  color: blue;
+  background-color: lightblue;
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 10%;
+  border-color: gold;
+}
+.fav-namef {
+  text-align: center;
+  color: purple;
+  background-color: pink;
+  width: 100px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 10%;
+  border-color: gold;
 }
 
 .names {

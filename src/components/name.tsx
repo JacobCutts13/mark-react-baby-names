@@ -5,5 +5,12 @@ export interface BabyNameProps {
 }
 
 export default function BabyName(props: BabyNameProps): JSX.Element {
-  return <div className={"name" + props.sex}>{props.name}</div>;
+  return (
+    <button
+      className={"name" + props.sex}
+      onClick={() => console.log(props.name)}
+    >
+      {props.name}
+    </button>
+  );
 }
