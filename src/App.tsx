@@ -1,8 +1,12 @@
-import BabyNames from "./components/names";
+import Main from "./components/main";
 import "./style.css";
 
 function App(): JSX.Element {
-  return <BabyNames />;
+  return (
+    <>
+      <Main />
+    </>
+  );
 }
 
 export default App;
