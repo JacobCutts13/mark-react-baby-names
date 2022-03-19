@@ -14,7 +14,7 @@ export default function Main(): JSX.Element {
     favourites: [],
     searches: babyInfoArraySorted,
     search: "",
-    searchGender: ""
+    searchGender: "",
   };
   const [nameListsState, setnameListsState] = useState<NameLists>(nameLists);
 
@@ -61,37 +61,39 @@ export default function Main(): JSX.Element {
 
   const handleSearchGender = (gender: string) => {
     const newState: NameLists = {
-        favourites: nameListsState.favourites,
-        searches: nameListsState.searches,
-        search: nameListsState.search,
-        searchGender: gender,
-      };  
-      setnameListsState(newState)
-  }
+      favourites: nameListsState.favourites,
+      searches: nameListsState.searches,
+      search: nameListsState.search,
+      searchGender: gender,
+    };
+    setnameListsState(newState);
+  };
 
   const nameElement = (babyInfo: BabyNameProps): JSX.Element => (
     <>
-      {babySearchFilter(babyInfo) && babyInfo.sex.includes(nameListsState.searchGender) && (
-        <button
-          className={"name" + babyInfo.sex}
-          onClick={() => handleAddFavourite(babyInfo)}
-        >
-          {babyInfo.name}
-        </button>
-      )}
+      {babySearchFilter(babyInfo) &&
+        babyInfo.sex.includes(nameListsState.searchGender) && (
+          <button
+            className={"name" + babyInfo.sex}
+            onClick={() => handleAddFavourite(babyInfo)}
+          >
+            {babyInfo.name}
+          </button>
+        )}
     </>
   );
 
   const nameFavouriteElement = (babyInfo: BabyNameProps): JSX.Element => (
     <>
-      {babySearchFilter(babyInfo) && babyInfo.sex.includes(nameListsState.searchGender) &&(
-        <button
-          className={"fav-name" + babyInfo.sex}
-          onClick={() => handleDeleteFavourite(babyInfo)}
-        >
-          {babyInfo.name}
-        </button>
-      )}
+      {babySearchFilter(babyInfo) &&
+        babyInfo.sex.includes(nameListsState.searchGender) && (
+          <button
+            className={"fav-name" + babyInfo.sex}
+            onClick={() => handleDeleteFavourite(babyInfo)}
+          >
+            {babyInfo.name}
+          </button>
+        )}
     </>
   );
 
@@ -105,12 +107,18 @@ export default function Main(): JSX.Element {
           value={nameListsState.search}
           onChange={(e) => searchNameListsState(e.target.value)}
         />
-        <div onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSearchGender(e.target.value)}>
-            <input type="radio" value="" name="gender" />All
-            <input type="radio" value="m" name="gender" />Boy
-            <input type="radio" value="f" name="gender" />Girl
+        <div
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            handleSearchGender(e.target.value)
+          }
+        >
+          <input type="radio" value="" name="gender" />
+          All
+          <input type="radio" value="m" name="gender" />
+          Boy
+          <input type="radio" value="f" name="gender" />
+          Girl
         </div>
-
       </div>
       <div className="favourites">
         <h2>Favourites: </h2>
